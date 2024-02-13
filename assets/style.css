@@ -28,15 +28,15 @@ h4 {
 }
 
 h3 {
-    padding-left: 200px;
+    text-align: left;
 }
 
 ul {
-    padding-left: 200px;
+    text-align: left;
     font-size: 16px;
 }
 
 p {
-    padding-left: 500px;
+    text-align: left;
     font-size: 16px;
   }
