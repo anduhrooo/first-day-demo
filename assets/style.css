@@ -56,3 +56,34 @@ figure li {
     text-align: center;
     background-color: gray;
 }
+
+.dates {
+    border: 5px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.dates li {
+    list-style: none;
+}
+
+.memes {
+    border: 5px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.gifs {
+    border: 5px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.gifs li {
+    list-style: none;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+}
