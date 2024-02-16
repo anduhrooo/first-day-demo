@@ -1,54 +1,58 @@
 * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif
 }
 
-header, 
-footer {
+header {
+    padding: 20px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    position: fixed
+}
+
+#navbar {
+    color: white;
+}
+
+header h1 {
+    font-size: 48px;
+    display: inline-block;
+}
+
+.navlist {
+    float: right;
+    padding: 20px;
+    font-size: 20px;
+    list-style: none;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+article figure {
+    border: 5px solid black;
+    margin: 10px;
+}
+
+figure li {
+    list-style: none;
+}
+
+#homeimg {
+    width: 100%;
+}
+
+.weekdays {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weekdays h3 {
     text-align: center;
-    background-color: #8D7B68;
-    color: #F1DEC9;
-}
-
-h1,
-h2,
-h4 {
-    text-align: center;
-}
-
-h3 {
-    text-align: left;    
-    background-color: #8D7B68;
-    color: #F1DEC9;
-    letter-spacing: 20px;
-}
-
-img {
-    width: 500px;
-    border: 10px solid #F1DEC9;
-}
-
-body {
-    background-color: #A4907C;
-}
-
-ul {
-    text-align: left;
-    font-size: 16px;
-}
-
-article {
-    line-height: 20px;
-    border: 10px solid #F1DEC9;
-    margin: 20px;
-    background-color: #8D7B68;
-}
-
-#title {
-    line-height: 50px;
-    border-bottom: 10px solid #F1DEC9;
-}
-
-#gifs {
-    width: 200px;
-    border: none
+    background-color: gray;
 }
