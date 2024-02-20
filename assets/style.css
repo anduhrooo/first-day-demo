@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 :root {
@@ -20,26 +20,29 @@ body {
 header {
     padding: 20px;
     width: 100%;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--primary);
     text-align: center;
 }
 
 main {
+}
+
+.cardsection {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    justify-content: space-between;
 }
 
 .card {
     border: 5px dashed var(--secondary);
     background-color: var(--accent);
     color: var(--primary);
-    flex: 1 0 30%;
     margin: 10px;
     padding: 0 10px 10px 10px;
     display: flex;
     flex-direction: column;
+    flex: 1 0 30%;
 }
 
 .card h2 {
@@ -60,11 +63,37 @@ main {
 
 .card:hover, .card:hover h2{
     box-shadow:0px 0px 10px 4px var(--tertiary), 
-    0px 0px 10px 4px var(--tertiary) inset;   
+    0px 0px 10px 4px var(--tertiary) inset;  
+}
+
+.test {
+    display: flex;
+    align-items: start;
+    padding: 20px;
+    border: 10px solid var(--secondary);
+}
+
+.link {
+    padding: 20px;
+}
+
+.link p {
+    display: flex;
+    width: fit-content;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    position: relative;
+    top: -50px;
+}
+
+.linkheader {
+    font-size: 40px;
 }
 
 footer {
     text-align: center;
+    background-color: var(--secondary);
+    color: var(--primary);
 }
 
 @media screen and (max-width:992px) {
@@ -77,3 +106,4 @@ footer {
         flex-basis: 95%;
     }
 }
+
