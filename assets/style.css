@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: "Titillium Web", sans-serif;
 }
 
 :root {
@@ -14,18 +14,29 @@
 }
 
 body {
-    background-color: var(--primary);
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+li {
+    list-style: none;
 }
 
 header {
     padding: 20px;
     width: 100%;
-    background-color: var(--secondary);
+    background: none;
     color: var(--primary);
     text-align: center;
 }
 
+footer {
+    text-align: center;
+    background-color: none;
+    color: var(--primary);
+}
+
 main {
+    min-height: 95vh;
 }
 
 .cardsection {
@@ -34,76 +45,144 @@ main {
     justify-content: space-between;
 }
 
+.datesection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .card {
-    border: 5px dashed var(--secondary);
-    background-color: var(--accent);
-    color: var(--primary);
-    margin: 10px;
-    padding: 0 10px 10px 10px;
+    width: 300px;
+    height: 200px;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    margin: 100px;
+  }
+  
+  .card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    flex: 1 0 30%;
-}
-
-.card h2 {
-    text-align: center ;
-    border: 5px solid var(--secondary);
-    background-color: var(--accent);
-    color: var(--primary);
-    margin:0 auto;
-    position: relative;
-    bottom:18px;
-    padding:5px 200px 5px 200px;
-    border-radius: 5px;
-}
-
-.card li {
-    list-style: none;
-}
-
-.card:hover, .card:hover h2{
-    box-shadow:0px 0px 10px 4px var(--tertiary), 
-    0px 0px 10px 4px var(--tertiary) inset;  
-}
-
-.test {
-    display: flex;
-    align-items: start;
-    padding: 20px;
-    border: 10px solid var(--secondary);
-}
-
-.link {
-    padding: 20px;
-}
-
-.link p {
-    display: flex;
-    width: fit-content;
-    border: 1px solid var(--secondary);
-    background-color: var(--primary);
-    position: relative;
-    top: -50px;
-}
-
-.linkheader {
-    font-size: 40px;
-}
-
-footer {
+    gap: 10px;
+    color: white;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background-color: var(--secondary);
-    color: var(--primary);
-}
+    height: 100%;
+  }
+  
+  .card-content .card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;
+    text-transform: uppercase;
+  }
+  
+  .card-content .card-para {
+    color: inherit;
+    opacity: 0.8;
+    font-size: 14px;
+  }
+  
+  .card:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+  }
+  
+  .card:hover:before {
+    transform: translateX(-100%);
+  }
+  
+  .card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+  }
+  
+  .card:hover:after {
+    transform: translateX(100%);
+  }
 
-@media screen and (max-width:992px) {
-    .card {
-        flex-basis: 45%;
+  .card2 {
+    width: 190px;
+    height: 254px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+    margin: 100px;
+  }
+  
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+  
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#FF886E, #FFC259);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+  
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+  
+  @keyframes move-up6 {
+    to {
+      transform: translateY(-10px);
     }
-}
-@media screen and (max-width:768px) {
-    .card {
-        flex-basis: 95%;
+  }
+  
+  @keyframes move-down1 {
+    to {
+      transform: translateY(10px);
     }
-}
+  }
+
 
